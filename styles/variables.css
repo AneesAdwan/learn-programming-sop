@@ -1,0 +1,73 @@
+:root {
+    /* Brand Colors */
+    --color-html: #E34F26;
+    --color-html-rgb: 227, 79, 38;
+    --color-html-dark: #c13e1b;
+    --color-html-light: #fbeee8;
+
+    --color-css: #1572B6;
+    --color-css-rgb: 21, 114, 182;
+    --color-css-dark: #10598f;
+    --color-css-light: #e8f1f8;
+
+    --color-js: #F7DF1E;
+    --color-js-rgb: 247, 223, 30;
+    --color-js-dark: #d4be19;
+    --color-js-text: #323330; /* Dark text for JS yellow background */
+    --color-js-light: #fefce8;
+
+    /* Primary Interface Colors */
+    --color-primary: #6366f1;
+    --color-primary-dark: #4f46e5;
+    --color-accent: #f43f5e;
+
+    /* Neutrals - Light Mode */
+    --bg-body: #ffffff;
+    --bg-surface: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+
+    /* Gradients */
+    --gradient-html: linear-gradient(135deg, #E34F26 0%, #F06529 100%);
+    --gradient-css: linear-gradient(135deg, #1572B6 0%, #2965F1 100%);
+    --gradient-js: linear-gradient(135deg, #F7DF1E 0%, #EACA10 100%);
+    
+    /* Typography */
+    --font-heading: 'Cairo', 'Tajawal', sans-serif;
+    --font-body: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+    --font-code: 'Fira Code', 'Consolas', monospace;
+
+    /* Spacing & Layout */
+    --container-width: 1280px;
+    --header-height: 70px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --bg-body: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+    --nav-bg: rgba(15, 23, 42, 0.85);
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.5);
+}
