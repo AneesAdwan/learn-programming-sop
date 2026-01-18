@@ -41,14 +41,22 @@ body.js-theme {
 
 /* Light Mode Variables */
 [data-theme="light"] {
-    --dark-bg: #f5f6f7;
-    --card-bg: rgba(255, 255, 255, 0.95);
-    --card-border: rgba(0, 0, 0, 0.1);
-    --text-primary: #2c3e50;
-    --text-secondary: #596275;
-    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    /* Clean Professional Light Theme */
+    --dark-bg: #ffffff;
+    /* Pure white background */
+    --card-bg: #ffffff;
+    /* White cards */
+    --card-border: #e5e7eb;
+    /* Neutral gray border */
+    --text-primary: #111827;
+    /* Almost black for text */
+    --text-secondary: #6b7280;
+    /* Medium gray */
+
+    /* Natural neutral shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 body {
@@ -171,6 +179,18 @@ body::before {
     color: var(--text-primary);
 }
 
+/* Light Mode: Navigation Links */
+[data-theme="light"] .nav-link {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+    color: #111827;
+}
+
+
 .nav-link::after {
     content: '';
     position: absolute;
@@ -275,6 +295,23 @@ body::before {
     opacity: 0.7;
 }
 
+/* Light Mode: Search Input */
+[data-theme="light"] .search-input {
+    background: #f9fafb;
+    border: 2px solid #d1d5db;
+}
+
+[data-theme="light"] .search-input:focus {
+    background: #ffffff;
+    border-color: #9ca3af;
+    box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.1);
+}
+
+[data-theme="light"] .search-input::placeholder {
+    color: #9ca3af;
+}
+
+
 /* Categories Navigation */
 .categories-nav {
     display: flex;
@@ -323,6 +360,33 @@ body::before {
 body.js-theme .category-btn.active {
     color: #1a1a1a;
 }
+
+/* Light Mode: Category Buttons */
+[data-theme="light"] .category-btn {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    font-weight: 600;
+}
+
+[data-theme="light"] .category-btn:hover {
+    background: #e5e7eb;
+    color: #111827;
+    border-color: #9ca3af;
+}
+
+[data-theme="light"] .category-btn.active {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: transparent;
+}
+
+[data-theme="light"] body.js-theme .category-btn.active {
+    color: #000;
+    font-weight: 700;
+}
+
 
 /* Category Count Badge */
 .cat-count {
@@ -471,8 +535,24 @@ body.js-theme .command-number {
 }
 
 [data-theme="light"] .command-code code {
-    color: #d35400;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
+
+/* Light Mode: Command Code - Black background with white text */
+[data-theme="light"] .command-code {
+    background: #1f2937;
+    border: 1px solid #374151;
+}
+
+[data-theme="light"] .command-code code {
+    color: #f9fafb;
+    background: transparent;
+    padding: 0;
+}
+
 
 .copy-btn {
     padding: 8px 15px;
@@ -498,7 +578,6 @@ body.js-theme .command-number {
 
 .command-note {
     margin-top: auto;
-    /* Push to bottom */
     display: flex;
     gap: 10px;
     padding: 12px 15px;
@@ -508,6 +587,14 @@ body.js-theme .command-number {
     font-size: 0.95rem;
     color: #b8e994;
 }
+
+/* Light Mode: Command Note - Readable colors */
+[data-theme="light"] .command-note {
+    background: #dcfce7;
+    border-right: 4px solid #22c55e;
+    color: #166534;
+}
+
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -573,7 +660,7 @@ body.js-theme .command-number {
 }
 
 [data-theme="light"] .hero-title {
-    background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+    background: linear-gradient(135deg, #111827 0%, #374151 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -683,6 +770,41 @@ body.js-theme .command-number {
 .card-js:hover .btn-learn {
     color: #000;
 }
+
+/* Light Mode: Enhanced Card Styles */
+[data-theme="light"] .lang-card {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .lang-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background: #ffffff;
+    border-color: #d1d5db;
+}
+
+[data-theme="light"] .btn-learn {
+    background: #f3f4f6;
+    color: #111827;
+    border: 1px solid #d1d5db;
+    font-weight: 700;
+}
+
+[data-theme="light"] .lang-card:hover .btn-learn {
+    background: var(--card-gradient);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
+
+[data-theme="light"] .card-js:hover .btn-learn {
+    color: #000;
+    font-weight: 700;
+}
+
+
 
 /* Language Count Badge on Home */
 .lang-count-badge {

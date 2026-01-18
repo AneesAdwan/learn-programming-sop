@@ -1,1661 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل تعلم HTML الشامل</title>
-    <link rel="stylesheet" href="html-course.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container">
-        <header class="header">
-            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
-                <span class="theme-icon sun">☀️</span>
-                <span class="theme-icon moon">🌙</span>
-            </button>
-            <div class="header-content">
-                <h1 class="main-title">
-                    <span class="icon">🌐</span>
-                    دليل تعلم HTML الشامل
-                </h1>
-                <p class="subtitle">جميع الوسوم والعناصر من الصفر للاحتراف</p>
-            </div>
-            <div class="search-container">
-                <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن وسم أو عنصر...">
-            </div>
-        </header>
-
-        <div class="categories-nav">
-            <button class="category-btn active" data-category="all">الكل</button>
-            <button class="category-btn" data-category="roadmap">خارطة الطريق</button>
-            <button class="category-btn" data-category="playground">المختبر البرمجي</button>
-            <button class="category-btn" data-category="projects">المشاريع العملية</button>
-            <button class="category-btn" data-category="quiz">اختبر نفسك</button>
-            <div class="nav-divider"></div>
-            <button class="category-btn" data-category="structure">الهيكلية</button>
-            <button class="category-btn" data-category="text">النصوص</button>
-            <button class="category-btn" data-category="lists">القوائم</button>
-            <button class="category-btn" data-category="links">الروابط</button>
-            <button class="category-btn" data-category="media">الوسائط</button>
-            <button class="category-btn" data-category="tables">الجداول</button>
-            <button class="category-btn" data-category="forms">النماذج</button>
-            <button class="category-btn" data-category="semantic">دلالية (Semantic)</button>
-            <button class="category-btn" data-category="meta">الميتا والرأس</button>
-            <button class="category-btn" data-category="attributes">السمات العامة</button>
-            <button class="category-btn" data-category="h5api">وسوم متقدمة</button>
-            <button class="category-btn" data-category="accessibility">سهولة الوصول</button>
-        </div>
-
-        <!-- Roadmap Section -->
-        <section class="mega-section hidden" id="roadmapSection">
-            <h2 class="section-title">🛣️ طريق الاحتراف: كيف تتعلم HTML صح؟</h2>
-            <div class="roadmap-grid">
-                <div class="roadmap-card">
-                    <div class="step-num">1</div>
-                    <h3>المرحلة الأولى: الأساسيات</h3>
-                    <p>فهم الهيكل الأساسي، العناوين، الفقرات، وكيف يعمل المتصفح.</p>
-                </div>
-                <div class="roadmap-card">
-                    <div class="step-num">2</div>
-                    <h3>المرحلة الثانية: تنظيم المحتوى</h3>
-                    <p>تعلم القوائم، الصور، الجداول، والروابط لربط الصفحات.</p>
-                </div>
-                <div class="roadmap-card">
-                    <div class="step-num">3</div>
-                    <h3>المرحلة الثالثة: التفاعل والنماذج</h3>
-                    <p>بناء الفورم، أنواع المدخلات، وكيفية جمع بيانات المستخدم.</p>
-                </div>
-                <div class="roadmap-card">
-                    <div class="step-num">4</div>
-                    <h3>المرحلة الرابعة: الـ SEO والدلالية</h3>
-                    <p>جعل الموقع صديقاً لجوجل باستخدام العناصر الدلالية والميتا.</p>
-                </div>
-            </div>
-
-            <!-- New: DevTools Tips -->
-            <div class="devtools-guide">
-                <h3>🛠️ أسرار المحترفين: استخدام أدوات المطور (DevTools)</h3>
-                <div class="dev-tips-grid">
-                    <div class="tip-card">
-                        <span>1</span>
-                        <p>اضغط <strong>F12</strong> أو <strong>Right Click > Inspect</strong> لفتح الأدوات.</p>
-                    </div>
-                    <div class="tip-card">
-                        <span>2</span>
-                        <p>استخدم <strong>Elements Tab</strong> لتعديل الـ HTML و الـ CSS مباشرة ورؤية النتيجة.</p>
-                    </div>
-                    <div class="tip-card">
-                        <span>3</span>
-                        <p>تحقق من <strong>Console</strong> لمعرفة ما إذا كان هناك أخطاء في روابط الملفات.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Live Code Playground -->
-        <section class="mega-section hidden" id="playgroundSection">
-            <h2 class="section-title">🧪 المختبر البرمجي: جرب الكود بنفسك</h2>
-            <div class="playground-container">
-                <div class="editor-side">
-                    <div class="editor-header">محرر الأكواد (HTML)</div>
-                    <textarea id="htmlEditor" spellcheck="false" placeholder="اكتب كود HTML هنا..."></textarea>
-                </div>
-                <div class="preview-side">
-                    <div class="editor-header">معاينة النتيجة (Live)</div>
-                    <iframe id="htmlPreview" sandbox="allow-scripts allow-modals"></iframe>
-                </div>
-            </div>
-            <div class="playground-tools">
-                <button onclick="resetEditor()" class="p-btn reset">إعادة تعيين</button>
-                <button onclick="insertTemplate()" class="p-btn template">كود جاهز</button>
-                <button onclick="downloadCode()" class="p-btn download">💾 تحميل كملف</button>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="mega-section hidden" id="projectsSection">
-            <h2 class="section-title">🚀 مشاريع عملية لبناء ملفك الشخصي</h2>
-            <div class="projects-grid">
-                <div class="project-item">
-                    <div class="project-icon">📄</div>
-                    <h3>مشروع 1: صفحة السيرة الذاتية</h3>
-                    <p>استخدم العناوين، القوائم، والصور لبناء CV احترافي بالـ HTML فقط.</p>
-                    <button class="copy-btn" onclick="loadProjectCode(1)">عرض الكود</button>
-                </div>
-                <div class="project-item">
-                    <div class="project-icon">📝</div>
-                    <h3>مشروع 2: نموذج استبيان متطور</h3>
-                    <p>بناء فورم كامل يحتوي على كافة أنواع المدخلات (Text, Checkbox, Radio, Range).</p>
-                    <button class="copy-btn" onclick="loadProjectCode(2)">عرض الكود</button>
-                </div>
-                <div class="project-item">
-                    <div class="project-icon">🌐</div>
-                    <h3>مشروع 3: صفحة هبوط (Landing Page)</h3>
-                    <p>استخدام الـ Semantic HTML لبناء هيكل موقع متكامل يحتوي على Nav, Header, Footer.</p>
-                    <button class="copy-btn" onclick="loadProjectCode(3)">عرض الكود</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quiz Section -->
-        <section class="mega-section hidden" id="quizSection">
-            <h2 class="section-title">🧠 تحدي العباقرة: هل أنت محترف؟</h2>
-            <div id="quizContainer" class="quiz-box">
-                <div id="questionText" class="question">تحميل السؤال...</div>
-                <div id="optionsGrid" class="options-grid"></div>
-                <div class="quiz-footer">
-                    <span id="quizProgress">سؤال 1 من 10</span>
-                </div>
-            </div>
-            <div id="quizResult" class="hidden result-box">
-                <h3>انتهى الاختبار!</h3>
-                <p id="scoreText"></p>
-                <button onclick="restartQuiz()" class="p-btn">إعادة المحاولة</button>
-            </div>
-        </section>
-
-        <div class="commands-grid" id="commandsGrid">
-            <!-- Structure -->
-            <div class="command-card" data-category="structure">
-                <div class="command-header">
-                    <span class="command-number">1</span>
-                    <h3 class="command-title">الهيكل الأساسي (Boilerplate)</h3>
-                    <span class="category-badge structure">هيكلية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ar" dir="rtl"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;عنوان الصفحة&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- محتوى الصفحة --&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">البنية الأساسية لأي ملف HTML5 حديث.</p>
-                <div class="command-note">
-                    <span class="note-icon">💡</span>
-                    <span>حدد اللغة والاتجاه لبناء صفحات عربية سليمة.</span>
-                </div>
-            </div>
-
-            <div class="command-card" data-category="structure">
-                <div class="command-header">
-                    <span class="command-number">2</span>
-                    <h3 class="command-title">التعليقات (Comments)</h3>
-                    <span class="category-badge structure">هيكلية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;!-- هذا تعليق لا يظهر في المتصفح --&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">كتابة ملاحظات داخل الكود لا يتم عرضها للمستخدم.</p>
-                <div class="command-note">
-                    <span class="note-icon">💡</span>
-                    <span>مفيد جداً لتنظيم الكود وشرحه للمطورين الآخرين.</span>
-                </div>
-            </div>
-
-            <!-- Text -->
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">3</span>
-                    <h3 class="command-title">العناوين (Headings)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;h1&gt;عنوان رئيسي&lt;/h1&gt;
-&lt;h2&gt;عنوان فرعي&lt;/h2&gt;
-&lt;h3&gt;عنوان أصغر&lt;/h3&gt;
-...
-&lt;h6&gt;أصغر عنوان&lt;/h6&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">العناوين من الأهم (1) إلى الأقل أهمية (6).</p>
-                <div class="command-note warning">
-                    <span class="note-icon">⚠️</span>
-                    <span>استخدم h1 مرة واحدة فقط في الصفحة للعنوان الرئيسي (SEO).</span>
-                </div>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">4</span>
-                    <h3 class="command-title">الفقرة (Paragraph)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;p&gt;هذه فقرة نصية تحتوي على معلومات.&lt;/p&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">العنصر الأساسي لاحتواء النصوص.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">5</span>
-                    <h3 class="command-title">نص عريض (Bold/Strong)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;strong&gt;نص هام جداً&lt;/strong&gt;
-&lt;b&gt;نص عريض شكلي&lt;/b&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تغميق الخط. Strong تعني أهمية دلالية، b تعني تنسيق فقط.</p>
-                <div class="command-note">
-                    <span class="note-icon">💡</span>
-                    <span>يفضل استخدام strong لأغراض سهولة الوصول (Accessibility).</span>
-                </div>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">6</span>
-                    <h3 class="command-title">نص مائل (Italic/Em)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;em&gt;نص مؤكد&lt;/em&gt;
-&lt;i&gt;نص مائل شكلي&lt;/i&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">إمالة الخط. em للتوكيد، i للمصطلحات الأجنبية أو الأيقونات.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">7</span>
-                    <h3 class="command-title">فواصل الأسطر (Break & Rule)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>سطر أول&lt;br&gt;
-سطر ثاني
-&lt;hr&gt;
-فاصل أفقي</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">br لكسر السطر، hr لخط فاصل أفقي.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">8</span>
-                    <h3 class="command-title">الاقتباس (Blockquote & Q)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;blockquote cite="source"&gt;اقتباس طويل&lt;/blockquote&gt;
-&lt;q&gt;اقتباس قصير&lt;/q&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">لعرض الاقتباسات الطويلة (كتلة) أو القصيرة (ضمن النص).</p>
-            </div>
-
-            <!-- Lists -->
-            <div class="command-card" data-category="lists">
-                <div class="command-header">
-                    <span class="command-number">9</span>
-                    <h3 class="command-title">القائمة غير المرتبة (UL)</h3>
-                    <span class="category-badge lists">قوائم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;ul&gt;
-    &lt;li&gt;عنصر 1&lt;/li&gt;
-    &lt;li&gt;عنصر 2&lt;/li&gt;
-&lt;/ul&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">قائمة نقطية (Bullets).</p>
-            </div>
-
-            <div class="command-card" data-category="lists">
-                <div class="command-header">
-                    <span class="command-number">10</span>
-                    <h3 class="command-title">القائمة المرتبة (OL)</h3>
-                    <span class="category-badge lists">قوائم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;ol&gt;
-    &lt;li&gt;الخطوة الأولى&lt;/li&gt;
-    &lt;li&gt;الخطوة الثانية&lt;/li&gt;
-&lt;/ol&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">قائمة مرقمة (1, 2, 3...).</p>
-            </div>
-
-            <div class="command-card" data-category="lists">
-                <div class="command-header">
-                    <span class="command-number">11</span>
-                    <h3 class="command-title">قائمة الوصف (DL)</h3>
-                    <span class="category-badge lists">قوائم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;dl&gt;
-  &lt;dt&gt;HTML&lt;/dt&gt;
-  &lt;dd&gt;لغة ترميز النصوص التشعبية&lt;/dd&gt;
-&lt;/dl&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">قائمة لتعريف المصطلحات (dt) وشرحها (dd).</p>
-            </div>
-
-            <!-- Links & Media -->
-            <div class="command-card" data-category="links">
-                <div class="command-header">
-                    <span class="command-number">12</span>
-                    <h3 class="command-title">الرابط التشعبي (Anchor)</h3>
-                    <span class="category-badge links">روابط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;a href="https://google.com" target="_blank"&gt;اذهب إلى جوجل&lt;/a&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">للانتقال لصفحة أخرى. target="_blank" يفتح في نافذة جديدة.</p>
-                <div class="command-note warning">
-                    <span class="note-icon">⚠️</span>
-                    <span>تأكد دائماً من صحة الرابط في خاصية href.</span>
-                </div>
-            </div>
-
-            <div class="command-card" data-category="links">
-                <div class="command-header">
-                    <span class="command-number">13</span>
-                    <h3 class="command-title">رابط البريد والهاتف</h3>
-                    <span class="category-badge links">روابط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;a href="mailto:info@example.com"&gt;راسلنا&lt;/a&gt;
-&lt;a href="tel:+123456789"&gt;اتصل بنا&lt;/a&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">روابط لفتح تطبيق البريد أو الاتصال مباشرة.</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">14</span>
-                    <h3 class="command-title">الصورة (Image)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;img src="image.jpg" alt="وصف الصورة" width="500"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">إدراج صورة. خاصية alt ضرورية للـ SEO وقارئات الشاشة.</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">15</span>
-                    <h3 class="command-title">الصورة مع الشرح (Figure)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;figure&gt;
-  &lt;img src="pic.jpg" alt="منظر"&gt;
-  &lt;figcaption&gt;منظر طبيعي جميل&lt;/figcaption&gt;
-&lt;/figure&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">طريقة دلالية لربط صورة بشرح توضيحي أسفلها.</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">16</span>
-                    <h3 class="command-title">الفيديو (Video)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;video controls width="100%" poster="thumbnail.jpg"&gt;
-  &lt;source src="movie.mp4" type="video/mp4"&gt;
-  متصفحك لا يدعم الفيديو.
-&lt;/video&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">مشغل فيديو مدمج مع أزرار التحكم.</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">17</span>
-                    <h3 class="command-title">الصوت (Audio)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;audio controls&gt;
-  &lt;source src="music.mp3" type="audio/mpeg"&gt;
-&lt;/audio&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">مشغل ملفات صوتية.</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">18</span>
-                    <h3 class="command-title">تضمين صفحة (Iframe)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;iframe src="https://www.example.com" width="600" height="400"&gt;&lt;/iframe&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عرض صفحة ويب أخرى داخل صفحتك (مثل خرائط جوجل أو يوتيوب).</p>
-            </div>
-
-            <!-- Tables -->
-            <div class="command-card" data-category="tables">
-                <div class="command-header">
-                    <span class="command-number">19</span>
-                    <h3 class="command-title">جدول بسيط (Table)</h3>
-                    <span class="category-badge tables">جداول</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;table border="1"&gt;
-  &lt;tr&gt;
-    &lt;th&gt;الاسم&lt;/th&gt;
-    &lt;th&gt;العمر&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;أحمد&lt;/td&gt;
-    &lt;td&gt;25&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">هيكل الجدول. tr للصفوف، th للعناوين، td للبيانات.</p>
-            </div>
-
-            <div class="command-card" data-category="tables">
-                <div class="command-header">
-                    <span class="command-number">20</span>
-                    <h3 class="command-title">جدول متكامل</h3>
-                    <span class="category-badge tables">جداول</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;table&gt;
-  &lt;thead&gt; &lt;!-- رأس الجدول --&gt;
-    &lt;tr&gt;&lt;th&gt;المنتج&lt;/th&gt;&lt;th&gt;السعر&lt;/th&gt;&lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt; &lt;!-- جسم الجدول --&gt;
-    &lt;tr&gt;&lt;td&gt;تفاح&lt;/td&gt;&lt;td&gt;$1&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt; &lt;!-- تذييل الجدول --&gt;
-    &lt;tr&gt;&lt;td&gt;المجموع&lt;/td&gt;&lt;td&gt;$1&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tfoot&gt;
-&lt;/table&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تقسيم الجدول لأجزاء دلالية (رأس، جسم، تذييل).</p>
-            </div>
-
-            <!-- Forms -->
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">21</span>
-                    <h3 class="command-title">عنصر النموذج (Form)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;form action="/submit" method="POST"&gt;
-  &lt;!-- حقول الإدخال هنا --&gt;
-&lt;/form&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">حاوية النموذج. action تحدد الوجهة، method تحدد نوع الإرسال (GET/POST).
-                </p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">22</span>
-                    <h3 class="command-title">حقل نصي (Text Input)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;label for="name"&gt;الاسم:&lt;/label&gt;
-&lt;input type="text" id="name" name="username" placeholder="أدخل اسمك" required&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">حقل إدخال سطر واحد. label ضروري لربط التسمية بالحقل.</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">23</span>
-                    <h3 class="command-title">أنواع المدخلات (Input Types)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;input type="email"&gt; &lt;!-- بريد --&gt;
-&lt;input type="password"&gt; &lt;!-- كلمة سر --&gt;
-&lt;input type="number"&gt; &lt;!-- أرقام --&gt;
-&lt;input type="date"&gt; &lt;!-- تاريخ --&gt;
-&lt;input type="color"&gt; &lt;!-- ألوان --&gt;
-&lt;input type="file"&gt; &lt;!-- ملفات --&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">أنواع مختلفة للـ input لتناسب البيانات (تظهر لوحات مفاتيح خاصة في
-                    الجوال).</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">24</span>
-                    <h3 class="command-title">نص متعدد الأسطر (Textarea)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;textarea name="msg" rows="4" cols="50"&gt;اكتب رسالتك هنا...&lt;/textarea&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">مربع نص كبير لكتابة ملاحظات أو رسائل.</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">25</span>
-                    <h3 class="command-title">القائمة المنسدلة (Select)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;select name="city"&gt;
-  &lt;option value="cairo"&gt;القاهرة&lt;/option&gt;
-  &lt;option value="riyadh" selected&gt;الرياض&lt;/option&gt;
-&lt;/select&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">لاختيار عنصر من قائمة خيارات محددة مسبقاً.</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">26</span>
-                    <h3 class="command-title">صناديق الاختيار (Checkbox/Radio)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;!-- خيارات متعددة --&gt;
-&lt;input type="checkbox" name="hobbies" value="reading"&gt; قراءة
-&lt;!-- خيار واحد فقط --&gt;
-&lt;input type="radio" name="gender" value="male"&gt; ذكر</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">Checkbox لاختيار متعدد، Radio لاختيار واحد من مجموعة (يجب توحيد الاسم
-                    name).</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">27</span>
-                    <h3 class="command-title">زر (Button)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;button type="submit"&gt;إرسال&lt;/button&gt;
-&lt;button type="button"&gt;زر عادي&lt;/button&gt;
-&lt;button type="reset"&gt;مسح&lt;/button&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">أزرار للتفاعل. submit يرسل النموذج، button للسكربتات، reset يفرغ الحقول.
-                </p>
-            </div>
-
-            <!-- Semantic HTML -->
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">28</span>
-                    <h3 class="command-title">الرأس والتذييل (Header/Footer)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;header&gt;شعار وقائمة علوية&lt;/header&gt;
-&lt;!-- محتوى --&gt;
-&lt;footer&gt;الحقوق وروابط الاتصال&lt;/footer&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عناصر دلالية تحدد رأس وتذييل الصفحة أو القسم.</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">29</span>
-                    <h3 class="command-title">التنقل (Nav)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;nav&gt;
-  &lt;a href="/"&gt;رئيسية&lt;/a&gt; | &lt;a href="/about"&gt;عنا&lt;/a&gt;
-&lt;/nav&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يحتوي على روابط التنقل الرئيسية في الموقع.</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">30</span>
-                    <h3 class="command-title">القسم والمقال (Section/Article)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;section&gt;قسم عام بموضوع محدد&lt;/section&gt;
-&lt;article&gt;محتوى مستقل (خبر/تدوينة)&lt;/article&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">article لمحتوى قابل للنشر مستقلاً، section لتقسيم الصفحة لمناطق.</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">31</span>
-                    <h3 class="command-title">المحتوى الجانبي (Aside)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;aside&gt;
-  إعلانات أو روابط ذات صلة جانبية
-&lt;/aside&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">محتوى جانبي أو غير مباشر الصلة بالمحتوى الرئيسي (Sidebar).</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">32</span>
-                    <h3 class="command-title">المحتوى الرئيسي (Main)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;main&gt;
-  المحتوى الفريد والأساسي للصفحة
-&lt;/main&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يستخدم مرة واحدة فقط لكل صفحة لاحتواء المحتوى الرئيسي.</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">33</span>
-                    <h3 class="command-title">التفاصيل والملخص (Details)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;details&gt;
-  &lt;summary&gt;اضغط للمزيد&lt;/summary&gt;
-  &lt;p&gt;محتوى مخفي يظهر عند النقر&lt;/p&gt;
-&lt;/details&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">لإنشاء قائمة قابلة للطي (Accordion) بدون جافاسكريبت.</p>
-            </div>
-
-            <!-- Meta & Head -->
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">34</span>
-                    <h3 class="command-title">وصف الصفحة (Meta Description)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;meta name="description" content="وصف مختصر لصفحتك يظهر في جوجل"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">هام جداً لمحركات البحث (SEO).</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">35</span>
-                    <h3 class="command-title">كلمات مفتاحية (Keywords)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;meta name="keywords" content="html, تعليم, كود, برمجة"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">كلمات دلالية عن محتوى الموقع (أقل أهمية حالياً).</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">36</span>
-                    <h3 class="command-title">إطار العرض (Viewport)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">ضروري جداً لجعل الموقع متجاوباً (Responsive) مع الموبايل.</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">37</span>
-                    <h3 class="command-title">ربط CSS خارجي (Link)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">ربط ملف التنسيق الخارجي بالصفحة.</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">38</span>
-                    <h3 class="command-title">أيقونة الموقع (Favicon)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;link rel="icon" type="image/png" href="favicon.png"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">الأيقونة التي تظهر في تبويب المتصفح.</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">39</span>
-                    <h3 class="command-title">سكربت (Script)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">ربط ملف JavaScript. خاصية defer تؤجل التنفيذ حتى تحميل الصفحة.</p>
-            </div>
-
-            <!-- HTML5 APIs & Extra -->
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">40</span>
-                    <h3 class="command-title">حاوية الرسم (Canvas)</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;canvas id="myChart" width="200" height="200"&gt;&lt;/canvas&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">مساحة لرسوميات 2D/3D يتم التحكم بها عبر JS.</p>
-            </div>
-
-            <div class="command-card" data-category="structure">
-                <div class="command-header">
-                    <span class="command-number">41</span>
-                    <h3 class="command-title">حاوي عام (Div)</h3>
-                    <span class="category-badge structure">هيكلية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;div class="container"&gt;
-  محتوى يتم تجميعه للتنسيق
-&lt;/div&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عنصر حاوي (Block) ليس له معنى دلالي، يستخدم للتجميع والتنسيق.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">42</span>
-                    <h3 class="command-title">حاوي نصي (Span)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>نص عادي &lt;span style="color:red"&gt;كلمة ملونة&lt;/span&gt; فقط.</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عنصر داخلي (Inline) لتحديد جزء من النص وتنسيقه.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">43</span>
-                    <h3 class="command-title">تحديد (Mark)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;p&gt;لا تنسى &lt;mark&gt;هذه الملاحظة&lt;/mark&gt; أبداً.&lt;/p&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تمييز النص بخلفية صفراء (Highlighter).</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">44</span>
-                    <h3 class="command-title">أكواد برمجية (Code/Pre)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;pre&gt;
-  يحفظ    المسافات
-     والأسطر
-&lt;/pre&gt;
-&lt;code&gt;console.log('Hi');&lt;/code&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">pre يعرض النص كما هو (بمسافاته)، code لترميز الأكواد.</p>
-            </div>
-
-            <div class="command-card" data-category="tables">
-                <div class="command-header">
-                    <span class="command-number">45</span>
-                    <h3 class="command-title">دمج الخلايا (Colspan/Rowspan)</h3>
-                    <span class="category-badge tables">جداول</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;td colspan="2"&gt;يأخذ خليتين بالعرض&lt;/td&gt;
-&lt;td rowspan="2"&gt;يأخذ خليتين بالطول&lt;/td&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">لدمج الخلايا في الجداول أفقياً أو عمودياً.</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">46</span>
-                    <h3 class="command-title">تجميع الحقول (Fieldset)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;fieldset&gt;
-  &lt;legend&gt;بيانات شخصية&lt;/legend&gt;
-  &lt;input type="text"&gt;
-&lt;/fieldset&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تجميع عناصر النموذج داخل إطار مع عنوان (Legend).</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">47</span>
-                    <h3 class="command-title">خريطة الصور (Map)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;img src="planets.gif" usemap="#workmap"&gt;
-&lt;map name="workmap"&gt;
-  &lt;area shape="rect" coords="34,44,270,350" href="sun.htm"&gt;
-&lt;/map&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">جعل أجزاء محددة من الصورة قابلة للنقر.</p>
-            </div>
-
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">48</span>
-                    <h3 class="command-title">التضمين (Embed)</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;embed src="snippet.html" width="500" height="200"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تضمين محتوى خارجي (مثل PDF أو فلاش قديماً).</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">49</span>
-                    <h3 class="command-title">اختصار (Abbr)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تحديد اختصار، يظهر المعنى الكامل عند تمرير الماوس.</p>
-            </div>
-
-            <div class="command-card" data-category="structure">
-                <div class="command-header">
-                    <span class="command-number">50</span>
-                    <h3 class="command-title">نص بجهة مختلفة (BDO)</h3>
-                    <span class="category-badge structure">هيكلية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;bdo dir="rtl"&gt;هذا النص سيظهر من اليمين لليسار&lt;/bdo&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تجاوز اتجاه النص الحالي (Bi-Directional Override).</p>
-            </div>
-
-            <!-- Attributes -->
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">51</span>
-                    <h3 class="command-title">المعرف الفريد (ID)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;div id="main-section"&gt;...&lt;/div&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">معرف فريد للعنصر، يستخدم لربط CSS أو JS أو الروابط الداخلية.</p>
-                <div class="command-note warning">
-                    <span class="note-icon">⚠️</span>
-                    <span>لا يجوز تكرار نفس الـ ID في الصفحة الواحدة.</span>
-                </div>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">52</span>
-                    <h3 class="command-title">الفئة (Class)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;p class="text-blue bold-text"&gt;...&lt;/p&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تستخدم لتصنيف مجموعة عناصر لتطبيق نفس التنسيق عليها.</p>
-                <div class="command-note">
-                    <span class="note-icon">💡</span>
-                    <span>يمكن للعنصر الواحد أن يأخذ عدة Classes مفصولة بمسافة.</span>
-                </div>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">53</span>
-                    <h3 class="command-title">التنسيق المباشر (Style)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;h1 style="color: blue; font-size: 20px;"&gt;...&lt;/h1&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تطبيق تنسيقات CSS مباشرة على العنصر (Inline Style).</p>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">54</span>
-                    <h3 class="command-title">نص تلميحي (Title)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;span title="هذا نص إضافي يظهر عند تمرير الماوس"&gt;مرر الماوس هنا&lt;/span&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يظهر نص صغير (Tooltip) عند تمرير مؤشر الماوس فوق العنصر.</p>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">55</span>
-                    <h3 class="command-title">وسوم البيانات المخصصة (Data-*)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;div data-user-id="123" data-role="admin"&gt;...&lt;/div&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تخزين معلومات خاصة بالمطور داخل العنصر لاستخدامها في JavaScript.</p>
-            </div>
-
-            <!-- Entities and Symbols -->
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">56</span>
-                    <h3 class="command-title">الرموز والكيانات (Entities)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&amp;nbsp; &lt;!-- مسافة فارغة --&gt;
-&amp;lt; &amp;gt; &lt;!-- أصغر من وأكبر من --&gt;
-&amp;amp; &lt;!-- علامة & --&gt;
-&amp;copy; &lt;!-- رمز الحقوق --&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">طريقة كتابة الرموز المحجوزة أو الخاصة في HTML.</p>
-            </div>
-
-            <!-- Modern Elements -->
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">57</span>
-                    <h3 class="command-title">نافذة منبثقة (Dialog)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;dialog open&gt;
-  &lt;p&gt;هذه نافذة مودال (Modal)&lt;/p&gt;
-  &lt;button&gt;إغلاق&lt;/button&gt;
-&lt;/dialog&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عنصر حديث لإنشاء النوافذ المنبثقة وصناديق الحوار.</p>
-            </div>
-
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">58</span>
-                    <h3 class="command-title">شريط التقدم (Progress)</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;label&gt;جارِ التحميل:&lt;/label&gt;
-&lt;progress value="70" max="100"&gt;&lt;/progress&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عرض حالة تقدم عملية ما (شريط تحميل).</p>
-            </div>
-
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">59</span>
-                    <h3 class="command-title">مقياس القيمة (Meter)</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;meter value="0.6"&gt;60%&lt;/meter&gt;
-&lt;meter value="2" min="0" max="10"&gt;2 من 10&lt;/meter&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عرض قياس معين داخل نطاق معروف (مثل سعة القرص أو قوة كلمة السر).</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">60</span>
-                    <h3 class="command-title">قائمة المقترحات (Datalist)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;input list="browsers"&gt;
-&lt;datalist id="browsers"&gt;
-  &lt;option value="Chrome"&gt;
-  &lt;option value="Firefox"&gt;
-&lt;/datalist&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">توفير خيارات مقترحة للمستخدم عند الكتابة في حقل الإدخال.</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">61</span>
-                    <h3 class="command-title">مخرجات الحساب (Output)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;form oninput="x.value=parseInt(a.value)+parseInt(b.value)"&gt;
-  &lt;input type="number" id="a" value="50"&gt; +
-  &lt;input type="number" id="b" value="50"&gt; =
-  &lt;output name="x" for="a b"&gt;100&lt;/output&gt;
-&lt;/form&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يمثل نتيجة عملية حسابية تظهر للمستخدم.</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">62</span>
-                    <h3 class="command-title">رسوميات متجهة (SVG)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;svg width="100" height="100"&gt;
-  &lt;circle cx="50" cy="50" r="40" fill="red" /&gt;
-&lt;/svg&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">إدراج رسومات متجهة برمجية مباشرة داخل الكود.</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">63</span>
-                    <h3 class="command-title">وسوم فيسبوك (Open Graph)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;meta property="og:title" content="عنوان الصفحة"&gt;
-&lt;meta property="og:image" content="link-to-img.jpg"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تحديد كيف سيظهر موقعك عند مشاركته على فيسبوك وواتساب.</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">64</span>
-                    <h3 class="command-title">وسوم تويتر (Twitter Card)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;meta name="twitter:card" content="summary"&gt;
-&lt;meta name="twitter:title" content="عنوان الخبر"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تحديد كيف سيظهر موقعك عند مشاركة رابطه على منصة X (تويتر سابقاً).</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">65</span>
-                    <h3 class="command-title">الرابط المرجعي (Base)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;base href="https://www.mysite.com/" target="_blank"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يحدد مساراً مرجعياً لكل الروابط الموجودة في الصفحة.</p>
-            </div>
-
-            <div class="command-card" data-category="structure">
-                <div class="command-header">
-                    <span class="command-number">66</span>
-                    <h3 class="command-title">عند تعطيل جافاسكريبت</h3>
-                    <span class="category-badge structure">هيكلية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;noscript&gt;يرجى تفعيل جافاسكريبت لتشغيل التطبيق.&lt;/noscript&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يظهر محتواه فقط إذا كان المتصفح لا يدعم جافاسكريبت أو تم تعطيلها.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">67</span>
-                    <h3 class="command-title">فرصة لكسر الكلمة (WBR)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>هذه&lt;wbr&gt;كلمة&lt;wbr&gt;طويلة&lt;wbr&gt;جداً&lt;wbr&gt;برمجياً</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يخبر المتصفح أين يمكنه كسر الكلمة إذا لم تكن هناك مساحة كافية.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">68</span>
-                    <h3 class="command-title">نص روبي (Ruby)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;ruby&gt;
-  漢 &lt;rt&gt; كان &lt;/rt&gt;
-&lt;/ruby&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يستخدم لإضافة تعليقات توضيحية صغيرة فوق الكلمات (شائع في اللغات
-                    الآسيوية).</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">69</span>
-                    <h3 class="command-title">عنصر الوقت (Time)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;time datetime="2026-01-16"&gt;اليوم&lt;/time&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">طريقة دلالية لتحديد التواريخ والأوقات ليفهمها المتصفح ومحركات البحث.</p>
-            </div>
-
-            <div class="command-card" data-category="accessibility">
-                <div class="command-header">
-                    <span class="command-number">71</span>
-                    <h3 class="command-title">الأدوار الدلالية (ARIA Roles)</h3>
-                    <span class="category-badge accessibility">وصول</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;div role="button" aria-label="إرسال النموذج"&gt;...&lt;/div&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تعريف دور العنصر لقارئات الشاشة عندما لا يكون الوسم دلالياً كافياً.</p>
-            </div>
-
-            <div class="command-card" data-category="accessibility">
-                <div class="command-header">
-                    <span class="command-number">72</span>
-                    <h3 class="command-title">إخفاء العناصر (Aria-Hidden)</h3>
-                    <span class="category-badge accessibility">وصول</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;span aria-hidden="true"&gt;📢&lt;/span&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">إخفاء العناصر التجميلية (مثل الأيقونات) عن قارئات الشاشة لتجنب التشتيت.
-                </p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">73</span>
-                    <h3 class="command-title">الصور المتجاوبة (Picture)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;picture&gt;
-  &lt;source srcset="large.jpg" media="(min-width: 800px)"&gt;
-  &lt;img src="small.jpg" alt="وصف"&gt;
-&lt;/picture&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">عرض صور مختلفة بناءً على حجم الشاشة لتوفير استهلاك البيانات.</p>
-            </div>
-
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">74</span>
-                    <h3 class="command-title">التحميل المتأخر (Lazy Loading)</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;img src="img.jpg" loading="lazy" alt="..."&gt;
-&lt;iframe src="..." loading="lazy"&gt;&lt;/iframe&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تحميل الصور والملفات فقط عندما تقترب من الظهور على الشاشة (تسريع الموقع).
-                </p>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">75</span>
-                    <h3 class="command-title">البيانات المهيكلة (Microdata)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;div itemscope itemtype="http://schema.org/Product"&gt;
-  &lt;span itemprop="name"&gt;آيفون 15&lt;/span&gt;
-&lt;/div&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">إضافة معاني لمحركات البحث لتعرف أن هذا النص يمثل "منتج" أو "سعر" أو
-                    "مؤلف".</p>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">76</span>
-                    <h3 class="command-title">تحرير المحتوى (ContentEditable)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;div contenteditable="true"&gt;يمكنك مسح هذا النص والكتابة بدلاً منه!&lt;/div&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">جعل أي عنصر في الصفحة قابلاً للتعديل مباشرة من قبل المستخدم.</p>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">77</span>
-                    <h3 class="command-title">السحب والإفلات (Draggable)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;img src="logo.png" draggable="true"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تفعيل خاصية سحب العناصر بالماوس داخل الصفحة.</p>
-            </div>
-
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">78</span>
-                    <h3 class="command-title">القوالب (Template)</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;template id="row"&gt;
-  &lt;tr&gt;&lt;td&gt;بيانات&lt;/td&gt;&lt;/tr&gt;
-&lt;/template&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">حفظ كود HTML مخفي ليتم استنساخه لاحقاً عبر JavaScript بصورة متكررة.</p>
-            </div>
-
-            <div class="command-card" data-category="links">
-                <div class="command-header">
-                    <span class="command-number">79</span>
-                    <h3 class="command-title">خاصية التحميل (Download)</h3>
-                    <span class="category-badge links">روابط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;a href="report.pdf" download="MY_REPORT"&gt;تحميل الملف&lt;/a&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">إجبار المتصفح على تحميل الملف بدلاً من فتحه في تبويب جديد.</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">80</span>
-                    <h3 class="command-title">تلقائي التركيز (Autofocus)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;input type="text" autofocus&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">وضع المؤشر تلقائياً داخل الحقل بمجرد فتح الصفحة.</p>
-            </div>
-
-            <div class="command-card" data-category="media">
-                <div class="command-header">
-                    <span class="command-number">81</span>
-                    <h3 class="command-title">مسارات النصوص (Track)</h3>
-                    <span class="category-badge media">وسائط</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;video src="vid.mp4"&gt;
-  &lt;track src="subs.vtt" kind="subtitles" srclang="ar" label="العربية"&gt;
-&lt;/video&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">إضافة ترجمة (Subtitles) أو وصف صوتي لملفات الفيديو.</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">82</span>
-                    <h3 class="command-title">تطبيق الويب (Manifest)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;link rel="manifest" href="/manifest.json"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">ربط ملف الإعدادات لجعل الموقع قابلاً للتثبيت كـ App (PWA).</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">83</span>
-                    <h3 class="command-title">التدقيق الإملائي (Spellcheck)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;textarea spellcheck="true"&gt;...&lt;/textarea&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تفعيل أو تعطيل الخطوط الحمراء التي تظهر تحت الأخطاء الإملائية.</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">84</span>
-                    <h3 class="command-title">عنصر البحث (Search)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;search&gt;
-  &lt;form&gt;&lt;input name="q"&gt;&lt;/form&gt;
-&lt;/search&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">وسوم دلالي حديث لتحديد منطقة البحث في الموقع (أحدث من HTML5).</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">86</span>
-                    <h3 class="command-title">منزلق الاختيار (Range)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;input type="range" min="0" max="100" step="10"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">شريط منزلق لاختيار قيمة عددية بين حد أدنى وأعلى.</p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">87</span>
-                    <h3 class="command-title">التحقق بالنمط (Pattern)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;input type="text" pattern="[A-Za-z]{3}" title="أدخل 3 حروف فقط"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">استخدام التعبيرات النمطية (Regex) لمنع المستخدم من إدخال بيانات خاطئة.
-                </p>
-            </div>
-
-            <div class="command-card" data-category="forms">
-                <div class="command-header">
-                    <span class="command-number">88</span>
-                    <h3 class="command-title">الإكمال التلقائي (Autocomplete)</h3>
-                    <span class="category-badge forms">نماذج</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;input type="email" autocomplete="on"&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تفعيل أو تعطيل اقتراحات المتصفح للحقول بناءً على بيانات المستخدم السابقة.
-                </p>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">89</span>
-                    <h3 class="command-title">ترتيب التركيز (Tabindex)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;div tabindex="0"&gt;يمكن الوصول لي عبر زر Tab&lt;/div&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تحديد ترتيب العناصر عند التنقل في الصفحة باستخدام لوحة المفاتيح.</p>
-            </div>
-
-            <div class="command-card" data-category="attributes">
-                <div class="command-header">
-                    <span class="command-number">90</span>
-                    <h3 class="command-title">الإخفاء الأصلي (Hidden)</h3>
-                    <span class="category-badge attributes">سمات</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;p hidden&gt;هذا النص مخفي تماماً من المتصفح&lt;/p&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">سمة بسيطة لإخفاء أي عنصر دون الحاجة لـ CSS.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">91</span>
-                    <h3 class="command-title">مصدر الاقتباس (Cite)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;p&gt;قال الشاعر في &lt;cite&gt;ديوان العرب&lt;/cite&gt;...&lt;/p&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يستخدم لتحديد عنوان العمل أو الكتاب أو القصيدة التي تم الاقتباس منها.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">92</span>
-                    <h3 class="command-title">التعريف (Dfn)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;p&gt;&lt;dfn&gt;الإنترنت&lt;/dfn&gt; هو شبكة اتصالات عالمية.&lt;/p&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يستخدم لتحديد المصطلح الذي يتم تعريفه لأول مرة في السياق.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">93</span>
-                    <h3 class="command-title">مخرجات النظام (Samp)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;samp&gt;Error: 404 Not Found&lt;/samp&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">لعرض مخرجات من برنامج كمبيوتر أو رسالة نظام.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">94</span>
-                    <h3 class="command-title">المتغيرات (Var)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;var&gt;x&lt;/var&gt; + &lt;var&gt;y&lt;/var&gt; = 10</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تحديد المتغيرات في المعادلات الرياضية أو الأكواد البرمجية (يظهر مائلاً
-                    عادةً).</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">95</span>
-                    <h3 class="command-title">النص المحذوف (Del)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>السعر القديم: &lt;del&gt;100$&lt;/del&gt; 80$</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يضع خطاً في منتصف النص للإشارة إلى أنه تم حذفه أو لم يعد صالحاً.</p>
-            </div>
-
-            <div class="command-card" data-category="text">
-                <div class="command-header">
-                    <span class="command-number">96</span>
-                    <h3 class="command-title">النص المضاف (Ins)</h3>
-                    <span class="category-badge text">نصوص</span>
-                </div>
-                <div class="command-code">
-                    <code>أهلاً بك في &lt;ins&gt;النسخة الجديدة&lt;/ins&gt; للمدونة.</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يضع خطاً أسفل النص للإشارة إلى أنه تمت إضافته حديثاً للمستند.</p>
-            </div>
-
-            <div class="command-card" data-category="semantic">
-                <div class="command-header">
-                    <span class="command-number">97</span>
-                    <h3 class="command-title">بيانات الاتصال (Address)</h3>
-                    <span class="category-badge semantic">دلالية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;address&gt;شارع المبرمجين، دمشق، سوريا&lt;/address&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">تحديد معلومات الاتصال الخاصة بمؤلف أو مالك الموقع.</p>
-            </div>
-
-            <div class="command-card" data-category="structure">
-                <div class="command-header">
-                    <span class="command-number">98</span>
-                    <h3 class="command-title">تنبيه قديم جداً (Obsolete)</h3>
-                    <span class="category-badge structure">هيكلية</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;center&gt;, &lt;font&gt;, &lt;marquee&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">هذه الوسوم "مهجورة". تجنب استخدامها واستبدلها بـ CSS دائماً.</p>
-                <div class="command-note warning">
-                    <span class="note-icon">⚠️</span>
-                    <span>استخدامها يجعل موقعك غير متوافق مع المعايير الحديثة.</span>
-                </div>
-            </div>
-
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">99</span>
-                    <h3 class="command-title">مساحة الـ Shadow DOM</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;slot name="header"&gt;المحتوى الافتراضي&lt;/slot&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">يستخدم في الـ Web Components لتمرير المحتوى داخل الـ Shadow Root.</p>
-            </div>
-
-            <div class="command-card" data-category="h5api">
-                <div class="command-header">
-                    <span class="command-number">101</span>
-                    <h3 class="command-title">رسوميات SVG البرمجية</h3>
-                    <span class="category-badge h5api">متقدم</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;svg width="100" height="100"&gt;
-  &lt;circle cx="50" cy="50" r="40" fill="red" /&gt;
-&lt;/svg&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">رسم الأشكال الهندسية مباشرة بالكود (قابلة للتكبير دون فقدان الجودة).</p>
-            </div>
-
-            <div class="command-card" data-category="meta">
-                <div class="command-header">
-                    <span class="command-number">102</span>
-                    <h3 class="command-title">تحميل الملفات (Async vs Defer)</h3>
-                    <span class="category-badge meta">ميتا</span>
-                </div>
-                <div class="command-code">
-                    <code>&lt;script src="..." async&gt;&lt;/script&gt;
-&lt;script src="..." defer&gt;&lt;/script&gt;</code>
-                    <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
-                </div>
-                <p class="command-description">defer يحمل الملف بالخلفية وينفذه بعد انتهاء تحميل الصفحة (الأفضل للأداء).
-                </p>
-            </div>
-        </div> <!-- End Grid -->
-
-        <div id="noResults" class="no-results">
-            <div class="icon">🔍</div>
-            <p>لا توجد نتائج بحث مطابقة</p>
-        </div>
-
-        <footer class="footer">
-            <p>تم تصميم هذا الدليل ليكون مرجعك الشامل في HTML</p>
-            <div class="footer-note">
-                برمجة وتطوير <span class="heart">❤</span> <strong>أنيس عدوان</strong>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">
-        <div class="toast-icon">✓</div>
-        <span>تم نسخ الكود بنجاح!</span>
-    </div>
-
-    <script src="html-course.js"></script>
-</body>
-
-</html>

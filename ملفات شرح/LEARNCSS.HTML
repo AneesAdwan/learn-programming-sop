@@ -1,85 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل تعلم CSS الشامل | The Ultimate CSS Bible</title>
-    <link rel="stylesheet" href="LEARNCSS.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container">
-        <header class="header">
-            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
-                <span class="theme-icon sun">☀️</span>
-                <span class="theme-icon moon">🌙</span>
-            </button>
-            <div class="header-content">
-                <h1 class="main-title">
-                    <span class="icon">🎨</span>
-                    دليل تعلم CSS الشامل
-                </h1>
-                <p class="subtitle">أضخم موسوعة CSS أوفلاين في العالم - أكثر من 850 خاصية وسر فني</p>
-            </div>
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="ابحث عن خاصية CSS... ">
-            </div>
-        </header>
-
-        <div class="categories-nav">
-            <button class="category-btn active" data-category="all">الكل</button>
-            <button class="category-btn" data-category="basics">الأساسيات</button>
-            <button class="category-btn" data-category="selectors">المحددات</button>
-            <button class="category-btn" data-category="boxmodel">الصندوق (Box)</button>
-            <button class="category-btn" data-category="typography">النصوص</button>
-            <button class="category-btn" data-category="colors">الألوان</button>
-            <button class="category-btn" data-category="layout">التخطيط</button>
-            <button class="category-btn" data-category="flexbox">Flexbox</button>
-            <button class="category-btn" data-category="grid">Grid</button>
-            <button class="category-btn" data-category="position">التموضع</button>
-            <button class="category-btn" data-category="animation">الأنيميشن</button>
-            <button class="category-btn" data-category="responsive">التجاوب</button>
-            <button class="category-btn" data-category="math">الرياضيات</button>
-            <button class="category-btn" data-category="scrolling">التمرير</button>
-            <button class="category-btn" data-category="interactivity">التفاعل</button>
-            <button class="category-btn" data-category="graphics">الجرافيك</button>
-            <button class="category-btn" data-category="svg">SVG</button>
-            <button class="category-btn" data-category="logical">المنطقي</button>
-            <button class="category-btn" data-category="performance">الأداء</button>
-            <button class="category-btn" data-category="printing">الطباعة</button>
-            <button class="category-btn" data-category="cursor">المؤشرات</button>
-            <button class="category-btn" data-category="display">العرض (Display)</button>
-            <button class="category-btn" data-category="lists">القوائم</button>
-            <button class="category-btn" data-category="units">الوحدات</button>
-            <button class="category-btn" data-category="forms">النماذج</button>
-            <button class="category-btn" data-category="modern">الحديث</button>
-        </div>
-
-        <div class="commands-grid" id="commandsGrid">
-            <!-- Items will be injected by JavaScript for better management, 
-                 but I will structure them here so the pattern is clear -->
-        </div>
-
-        <div id="noResults" class="no-results">
-            <div class="icon">🔍</div>
-            <p>لا توجد نتائج بحث مطابقة</p>
-        </div>
-
-        <footer class="footer">
-            <p>برمجة وتطوير : أنيس عدوان</p>
-            <p class="footer-note">💡 نصيحة: احفظ هذه الصفحة في المفضلة للرجوع إليها!</p>
-        </footer>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast">
-        <div class="toast-icon">✓</div>
-        <span>تم نسخ الكود بنجاح!</span>
-    </div>
-
-    <script src="LEARNCSS.js"></script>
-</body>
-
-</html>
